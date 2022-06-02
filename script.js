@@ -36,7 +36,7 @@ function spawn_tf_buttons()
 		if (tfb.hasAttribute('id')){var addid = ' id="' + tfb.getAttribute('id') + '"'}else{var addid = ''}
 		if (tfb.hasAttribute('href')){var addhref = 'href="' + tfb.getAttribute('href') + '"'}else{var addhref = ''}
 		tfb.replaceWith(ehtml(`
-			<a` + addid + ` ` + addhref + ` href="#" class="tfbtn">
+			<a` + addid + ` ` + addhref + ` class="tfbtn">
 				<div class="bbgg">
 					<img nonhover src="assets/tfbtn_l.png">
 					<img nonhover class="imgmid" src="assets/tfbtn_m.png">
