@@ -249,6 +249,27 @@ body
 	object-fit: contain;
 }
 
+
+
+#intro_poster_fry
+{
+	display: flex;
+	position: relative;
+	height: 500px;
+	justify-content: center;
+	margin-bottom: 150px;
+}
+
+#intro_poster_fry img
+{
+	width: 100%;
+	height: 100%;
+	object-position: center;
+	object-fit: contain;
+}
+
+
+
 #poster_invite
 {
 	all: unset;
