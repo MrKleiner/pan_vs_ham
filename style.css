@@ -11,6 +11,8 @@
 	font-weight: 100;
 	src: url('fonts/tf2_bold.ttf');
 }
+
+
 /*===============================*/
 
 .tfbtn
@@ -380,8 +382,20 @@ body
 #quick_descr
 {
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: row;
+	justify-content: space-around;
+	/*align-items: center;*/
+}
+
+#quick_descr img
+{
+	display: flex;
+	/*flex-grow: 1;*/
+	/*height: 100%;*/
+	width: 300px;
+	object-position: center;
+	object-fit: contain;
+	/*margin-left: 100px;*/
 }
 
 #quick_d_text
@@ -402,6 +416,7 @@ body
 	box-shadow: inset 0px 2px 9px 5px #f5e7de, inset 0px -5px 9px 1px #000000;
 	padding: 17px;
 	border-radius: 10px;
+	/*margin-left: 100px;*/
 
 }
 
