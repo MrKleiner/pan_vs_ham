@@ -1,0 +1,13 @@
+@font-face
+{
+	font-family: 'tf2_secondary';
+	font-weight: 100;
+	src: url('fonts/tf2_secondary.ttf');
+}
+
+@font-face
+{
+	font-family: 'tf2_bold';
+	font-weight: 100;
+	src: url('fonts/tf2_bold.ttf');
+}

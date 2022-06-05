@@ -1,0 +1,125 @@
+
+/*===============================*/
+
+.tfbtn
+{
+	/*all: unset;*/
+	text-decoration: none;
+	position: relative;
+	/*margin-top: 100px;*/
+	display: flex;
+	width: fit-content;
+	user-select: none !important;
+	/*height: 200px;*/
+	/*width: 400px;*/
+}
+
+.tfbtn *
+{
+	user-select: none !important;
+}
+
+
+.bbgg
+{
+	position: absolute;
+	justify-content: space-between;
+	display: flex;
+	/*flex-grow: 1;*/
+	/*width: 100%;*/
+	width: 100%;
+    height: 100%;
+	/*background: blue;*/
+}
+
+.bbgg img
+{
+	height: 100%;
+	aspect-ratio: 128/256;
+}
+
+.imgmid
+{
+	width: -webkit-fill-available;
+	width: -moz-available;
+}
+
+
+.btntext
+{
+	display: flex;
+	z-index: 2;
+	padding: 10px;
+	font-family: 'tf2_bold', sans-serif;
+	font-size: 21px;
+	color: #34302d;
+	/*pointer-events: none;*/
+}
+
+.tfbtn [dohover]
+{
+	display: none;
+}
+
+.tfbtn:hover [nonhover]
+{
+	display: none !important;
+}
+
+.tfbtn:hover [dohover]
+{
+	display: flex !important;
+}
+
+.tfbtn:hover .btntext
+{
+	color: #f5e7de;
+}
+
+.tfbtn:hover svg
+{
+	fill: #f5e7de;
+}
+
+*
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+img, video
+{
+	user-select: none;
+}
+
+
+/*defaults*/
+a.tfbtn svg
+{
+	width: 17px;
+	height: 100%;
+	object-position: center;
+	object-fit: contain;
+	z-index: 3;
+	/*fill: #6b6a65;*/
+	fill: #675f56;
+	/*fill: #595751;*/
+	margin-left: 10px;
+}
+
+a.tfbtn img.tfbtn_bitmap_icon
+{
+	width: 17px;
+	height: 100%;
+	object-position: center;
+	object-fit: contain;
+	z-index: 3;
+	/*fill: #6b6a65;*/
+	fill: #675f56;
+	/*fill: #595751;*/
+	margin-left: 10px;
+}
+/*defaults*/
+
+
+/*===============================*/

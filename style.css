@@ -1,124 +1,248 @@
-@font-face
+@import url('fonts.css');
+@import url('tfbtns.css');
+
+
+
+
+
+
+html
 {
-	font-family: 'tf2_secondary';
-	font-weight: 100;
-	src: url('fonts/tf2_secondary.ttf');
-}
-
-@font-face
-{
-	font-family: 'tf2_bold';
-	font-weight: 100;
-	src: url('fonts/tf2_bold.ttf');
-}
-
-
-/*===============================*/
-
-.tfbtn
-{
-	/*all: unset;*/
-	text-decoration: none;
-	position: relative;
-	/*margin-top: 100px;*/
-	display: flex;
-	width: fit-content;
-	user-select: none !important;
-	/*height: 200px;*/
-	/*width: 400px;*/
-}
-
-.tfbtn *
-{
-	user-select: none !important;
-}
-
-
-.bbgg
-{
-	position: absolute;
-	justify-content: space-between;
-	display: flex;
-	/*flex-grow: 1;*/
-	/*width: 100%;*/
 	width: 100%;
-    height: 100%;
-	/*background: blue;*/
-}
-
-.bbgg img
-{
 	height: 100%;
-	aspect-ratio: 128/256;
+	min-height: 650px;
 }
 
-.imgmid
+body
 {
-	width: -webkit-fill-available;
-	width: -moz-available;
+	/*background-image: url('assets/mainbg_top_shade.png'), url('assets/mainbg_mid_shade.png');*/
+	/*background-size: 300px;*/
+	background-position: bottom right, left;
+	background-repeat: no-repeat;
+	background-size: contain, cover;
+	display: flex;
+	/*flex-direction: column;*/
+	width: 100%;
+	height: 100%;
 }
 
 
-.btntext
+#lside
 {
 	display: flex;
-	z-index: 2;
-	padding: 12px;
+	flex-direction: column;
+	/*margin-left: 9vw;*/
+	margin-left: 12%;
+	width: 500px;
+}
+
+.menu_panel
+{
+	display: flex;
+	flex-direction: column;
+	background: #38332c;
+	border-radius: 5px;
+	padding: 8px;
+	-webkit-box-shadow: 0px 0px 1.5px 1.5px #38332C; 
+	box-shadow: 0px 0px 1.5px 1.5px #38332C;
+}
+
+.menu_panel
+{
+	margin-top: 50px;
+}
+
+#info_panel
+{
+	margin-top: 0px;
+	z-index: 5;
+}
+
+.menu_panel a.tfbtn
+{
+	margin-top: 10px;
+}
+
+.menu_panel a.tfbtn svg
+{
+	width: 17px;
+	height: 100%;
+	object-position: center;
+	object-fit: contain;
+	z-index: 3;
+	/*fill: #6b6a65;*/
+	fill: #675f56;
+	/*fill: #595751;*/
+	margin-left: 10px;
+}
+
+.menu_panel a.tfbtn img.tfbtn_bitmap_icon
+{
+	width: 17px;
+	height: 100%;
+	object-position: center;
+	object-fit: contain;
+	z-index: 3;
+	/*fill: #6b6a65;*/
+	fill: #675f56;
+	/*fill: #595751;*/
+	margin-left: 10px;
+}
+
+#menu_btn_news svg
+{
+	transform: scale(1.5);
+}
+
+#menu_btn_info svg 
+{
+	transform: scale(1.2);
+}
+
+.menu_panel a.tfbtn:hover svg
+{
+	fill: #f5e7de;
+}
+
+
+.menu_panel_title
+{
+	padding: 5px;
 	font-family: 'tf2_bold';
-	/*font-size: inherit;*/
-	color: #34302d;
-}
-
-.tfbtn [dohover]
-{
-	display: none;
-}
-
-.tfbtn:hover [nonhover]
-{
-	display: none !important;
-}
-
-.tfbtn:hover [dohover]
-{
-	display: flex !important;
-}
-
-.tfbtn:hover .btntext
-{
+	font-size: 21px;
 	color: #f5e7de;
-}
-
-
-/*===============================*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*
-{
-	padding: 0px;
-	margin: 0px;
-}
-
-img, video
-{
 	user-select: none;
 }
+
+
+#menu_title
+{
+	display: flex;
+	height: 250px;
+	position: relative;
+
+}
+
+#menu_title video
+{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	object-position: center;
+	object-fit: contain;
+	transform: scale(1.7);
+	mix-blend-mode: screen;
+	position: absolute;
+}
+
+#menu_title img
+{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	object-position: center;
+	object-fit: contain;
+	z-index: 3;
+	transform: scale(1.6);
+}
+
+#menu_btn_info img.tfbtn_bitmap_icon
+{
+	transform: scale(1.5);
+}
+
+#rside
+{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 25vw;
+	/*background: gray;*/
+	/*margin-left: 50px;*/
+	margin-left: 3vw;
+}
+
+#rside_poster
+{
+	margin-top: 250px;
+	height: 25vw;
+	/*width: 100%;*/
+	object-position: center;
+	object-fit: contain;
+	/*margin-bottom: 100px;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #bgdark
 {
@@ -128,7 +252,7 @@ img, video
 	z-index: -1;
 	background: rgba(0, 0, 0, 0.7);
 }
-
+/*
 video
 {
 	mix-blend-mode: screen;
@@ -143,7 +267,7 @@ body
 	display: flex;
 	flex-direction: column;
 }
-
+*/
 
 #pan_scene
 {
@@ -396,6 +520,7 @@ body
 	object-position: center;
 	object-fit: contain;
 	/*margin-left: 100px;*/
+	filter: brightness(0.9);
 }
 
 #quick_d_text
