@@ -88,17 +88,19 @@ body
 	border-radius: 6px;
 	min-width: 300px;
 	max-width: 650px;
+	min-width: 424px;
 	
 }
 
 #infopage_lside
 {
-	display: flex;
+	/*display: flex;*/
 	flex-direction: column;
 	height: 100%;
 	overflow-y: scroll;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
+    padding-bottom: 200px;
 }
 
 #infopage_lside::-webkit-scrollbar
@@ -195,6 +197,52 @@ body
 
 
 
+
+#item_descr_pan, #item_descr_ham
+{
+	display: flex;
+}
+
+#pan_descr_img, #ham_descr_img
+{
+	display: flex;
+	flex-direction: column;
+}
+
+#pan_descr_img img, #ham_descr_img img
+{
+	object-fit: contain;
+	object-position: center;
+	width: 200px;
+}
+
+#item_descr_pan ul, #item_descr_ham ul
+{
+	margin-left: 30px;
+}
+
+
+#question_items .infobox_step
+{
+	-webkit-box-shadow: inset 0px 0px 6px 4px rgba(0,0,0,0.52); 
+	box-shadow: inset 0px 0px 6px 4px rgba(0,0,0,0.52);
+	border-radius: 6px;
+	background: rgba(0, 0, 0, 0.2);
+	padding: 10px;
+}
+
+
+
+#ham_descr_img
+{
+	min-width: 200px;
+}
+
+#ham_descr_img img
+{
+	width: 150px;
+	align-self: center;
+}
 
 
 

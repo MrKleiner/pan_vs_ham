@@ -124,6 +124,7 @@ a.tfbtn img.tfbtn_bitmap_icon
 .tfbtn_icon_only
 {
 	justify-content: center;
+	min-width: 50px;
 }
 
 

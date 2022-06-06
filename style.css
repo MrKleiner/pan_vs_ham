@@ -174,7 +174,13 @@ body
 
 
 
-
+@media only screen and (max-width: 1430px)
+{
+	#rside_poster
+	{
+		display: none !important;
+	}
+}
 
 
 
