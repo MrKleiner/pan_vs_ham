@@ -75,25 +75,45 @@ body
 
 
 
-#infobox
+.infobox
 {
 	display: flex;
 	flex-direction: column;
-	width: 30vw;
+	width: 35vw;
 	margin: 100px 0px 0px 4vw;
+	height: fit-content;
 	-webkit-box-shadow: 2px 2px 5px 1px #070707; 
 	box-shadow: 2px 2px 5px 1px #070707;
 	overflow: hidden;
 	border-radius: 6px;
 	min-width: 300px;
+	max-width: 650px;
+	
 }
 
-#infobox_top
+#infopage_lside
+{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#infopage_lside::-webkit-scrollbar
+{
+	display: none;
+}
+
+
+.infobox_top
 {
 	/*font-family: arial,helvetica,sans-serif;*/
 	/*font-weight: bold;*/
 	font-family: 'tf2_bold';
-	font-size: 25px;
+	/*font-size: 25px;*/
+	font-size: 30px;
 	display: flex;
 	border-radius: 6px 6px 0px 0px;
 	background: gray;
@@ -108,7 +128,7 @@ body
 	padding: 4px;
 }
 
-#infobox_top span
+.infobox_top span
 {
 	background-image: linear-gradient(0deg, rgba(156,154,143,1) 0%, rgba(219,217,205,1) 100%);
 	-webkit-background-clip: text;
@@ -119,10 +139,10 @@ body
 }
 
 
-#infobox_bottom
+.infobox_bottom
 {
 	font-family: arial,helvetica,sans-serif;
-	font-size: 12px;
+	/*font-size: 15px;*/
 	display: flex;
 	flex-direction: column;
 	background: black;
@@ -149,20 +169,29 @@ body
 	display: flex;
 	color: #c36815;
 	font-family: 'tf2_secondary';
-	font-size: 17px;
+	font-size: 19px;
 	font-weight: bold;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
 }
 
 .infobox_step_text
 {
-	display: flex;
-	color: #aba9a8;
-	font-size: 15px;
+	margin-top: 3px;
+	/*display: flex;*/
+	color: #C7C3C1;
+	font-size: 16px;
 }
 
+#pro_standards
+{
+	text-decoration: none;
+	color: #CCC6A4;
+}
 
-
-
+#pro_standards:hover
+{
+	text-decoration: underline;
+}
 
 
 
