@@ -20,6 +20,7 @@
 }
 
 
+
 .bbgg
 {
 	position: absolute;
@@ -119,7 +120,23 @@ a.tfbtn img.tfbtn_bitmap_icon
 	/*fill: #595751;*/
 	margin-left: 10px;
 }
-/*defaults*/
+
+.tfbtn_icon_only
+{
+	justify-content: center;
+}
+
+
+.tfbtn_icon_only .btntext
+{
+	display: none;
+}
+
+.tfbtn_icon_only svg, .tfbtn_icon_only img
+{
+	margin: 0px !important;
+	align-self: center;
+}
 
 
 /*===============================*/

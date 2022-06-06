@@ -74,3 +74,103 @@ body
 
 
 
+
+#infobox
+{
+	display: flex;
+	flex-direction: column;
+	width: 30vw;
+	margin: 100px 0px 0px 4vw;
+	-webkit-box-shadow: 2px 2px 5px 1px #070707; 
+	box-shadow: 2px 2px 5px 1px #070707;
+	overflow: hidden;
+	border-radius: 6px;
+	min-width: 300px;
+}
+
+#infobox_top
+{
+	/*font-family: arial,helvetica,sans-serif;*/
+	/*font-weight: bold;*/
+	font-family: 'tf2_bold';
+	font-size: 25px;
+	display: flex;
+	border-radius: 6px 6px 0px 0px;
+	background: gray;
+	background: linear-gradient(0deg, rgba(53,48,42,1) 0%, rgba(71,64,56,1) 100%);
+	/*-webkit-box-shadow: 0px 1px 7px 1px #070707; */
+	box-shadow: 0px 1px 7px 1px #070707;
+	z-index: 3;
+	/*width: 100%;*/
+	/*text-align: center;*/
+	/*align-items: center;*/
+	justify-content: center;
+	padding: 4px;
+}
+
+#infobox_top span
+{
+	background-image: linear-gradient(0deg, rgba(156,154,143,1) 0%, rgba(219,217,205,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-fill-color: transparent;
+
+}
+
+
+#infobox_bottom
+{
+	font-family: arial,helvetica,sans-serif;
+	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	background: black;
+	background: linear-gradient(0deg, rgba(60,54,47,1) 0%, rgba(78,69,62,1) 100%);
+	border-radius: 0px 0px 6px 6px;
+	padding: 15px;
+}
+
+
+.infobox_step
+{
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.infobox_step:not(:first-child)
+{
+	margin-top: 20px;
+}
+
+.infobox_step_header
+{
+	display: flex;
+	color: #c36815;
+	font-family: 'tf2_secondary';
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.infobox_step_text
+{
+	display: flex;
+	color: #aba9a8;
+	font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -52,6 +52,13 @@ function spawn_tf_buttons()
 		var btext = tfb.textContent
 		if (tfb.hasAttribute('id')){var addid = ' id="' + tfb.getAttribute('id') + '"'}else{var addid = ''}
 		if (tfb.hasAttribute('href')){var addhref = 'href="' + tfb.getAttribute('href') + '"'}else{var addhref = ''}
+		/*
+		if (tfb.innerText != ''){
+			var hastext = '<div class="btntext">' + btext + '</div>';
+		}else{
+			var hastext = '';
+		}
+		*/
 		var btnhtm = ehtml(`
 			<a` + addid + ` ` + addhref + ` class="tfbtn">
 				<div class="bbgg">
@@ -78,6 +85,11 @@ function spawn_tf_buttons()
 		if (tfb.getAttribute('img') != null){
 			btnhtm.prepend(ehtml('<img class="tfbtn_bitmap_icon" src="' + tfb.getAttribute('img') + '">'))
 		}
+
+		if (tfb.innerText.trim() == ''){
+			btnhtm.classList.add('tfbtn_icon_only')
+		}
+
 
 		tfb.replaceWith(btnhtm)
 
@@ -178,12 +190,53 @@ function init_menu()
 function spawn_menu()
 {
 	document.body.style.backgroundImage = 'url("assets/menu/fg/regular/' + rnd_e(window.menu_graph['fg']['fgs_regular']) + '"), url("assets/menu/bg/regular/' + rnd_e(window.menu_graph['bg']['bgs_regular']) + '")'
+}
+
+
+
+function init_info_page()
+{
+	fetch('sys/tmptext.txt', {
+		'headers': {
+			'accept': '*/*',
+			'cache-control': 'no-cache',
+			'pragma': 'no-cache'
+		},
+		// 'referrerPolicy': 'strict-origin-when-cross-origin',
+		'body': null,
+		'method': 'GET',
+		'mode': 'cors',
+		'credentials': 'omit'
+	})
+	.then(function(fuck) {
+	    console.log(fuck.status);
+	    fuck.text().then(function(data) {
+	        console.log(data);
+	        document.querySelector('#quicktext').replaceWith(data);
+	    });
+	});
+
 
 
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
