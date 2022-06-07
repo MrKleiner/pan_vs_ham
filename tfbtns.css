@@ -12,6 +12,7 @@
 	user-select: none !important;
 	/*height: 200px;*/
 	/*width: 400px;*/
+	overflow: hidden;
 }
 
 .tfbtn *
@@ -37,6 +38,7 @@
 {
 	height: 100%;
 	aspect-ratio: 128/256;
+	/*flex-direction: row;*/
 }
 
 .imgmid
@@ -106,6 +108,7 @@ a.tfbtn svg
 	fill: #675f56;
 	/*fill: #595751;*/
 	margin-left: 10px;
+	align-self: center;
 }
 
 a.tfbtn img.tfbtn_bitmap_icon
@@ -119,6 +122,7 @@ a.tfbtn img.tfbtn_bitmap_icon
 	fill: #675f56;
 	/*fill: #595751;*/
 	margin-left: 10px;
+	align-self: center;
 }
 
 .tfbtn_icon_only

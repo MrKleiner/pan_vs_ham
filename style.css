@@ -63,14 +63,14 @@ body
 	margin-top: 10px;
 }
 
-.menu_panel a.tfbtn svg
+.menu_panel a.tfbtn svgs
 {
 	width: 17px;
 	height: 100%;
 	object-position: center;
 	object-fit: contain;
 	z-index: 3;
-	/*fill: #6b6a65;*/
+	/*fill: #6b6a65;
 	fill: #675f56;
 	/*fill: #595751;*/
 	margin-left: 10px;
@@ -174,15 +174,134 @@ body
 
 
 
-@media only screen and (max-width: 1430px)
+@media only screen and (max-width: 1300px)
 {
-	#rside_poster
+/*	#rside_poster
 	{
 		display: none !important;
+	}*/
+
+	#lside
+	{
+		margin-left: 1vw;
+	}
+
+	#menu_title video
+	{
+		transform: scale(1.2);
+	}
+
+	#menu_title img
+	{
+		transform: scale(1.1);
+	}
+
+	#menu_title
+	{
+		height: 200px;
+	}
+
+}
+/*@media only screen and (hover: none) and (pointer: coarse)*/
+@media only screen and (max-width: 700px)
+{
+
+	body, #lside
+	{
+		flex-direction: column;
+	}
+
+	body, html
+	{
+		height: auto;
+		overflow-x: hidden;
+	}
+
+	#lside
+	{
+		width: auto;
+		margin-right: 12px;
+		margin-left: 12px;
+	}
+
+	#rside
+	{
+		flex-direction: column;
+		justify-content: center;
+		width: auto;
+		flex-grow: 1;
+		margin-bottom: 150px;
+	}
+
+	#rside_poster
+	{
+		height: 90vw;
+		margin: 0px;
+		margin-top: 50px;
+	}
+
+	#join_discord_btn .btntext
+	{
+		font-size: 5vw;
+	}
+
+}
+
+@media only screen and (hover: none) and (pointer: coarse)
+{
+	body, #lside
+	{
+		flex-direction: column;
+	}
+
+	body, html
+	{
+		height: auto;
+		overflow-x: hidden;
+	}
+
+	#lside
+	{
+		width: auto;
+		margin-right: 12px;
+		margin-left: 12px;
+	}
+
+	#rside
+	{
+		flex-direction: column;
+		justify-content: center;
+		width: auto;
+		flex-grow: 1;
+		margin-bottom: 150px;
+	}
+
+	#rside_poster
+	{
+		height: 90vw;
+		margin: 0px;
+		margin-top: 50px;
+	}
+
+	#join_discord_btn .btntext, #lside .btntext
+	{
+		font-size: 5vw;
+	}
+
+	a.tfbtn svg, a.tfbtn .tfbtn_bitmap_icon
+	{
+		width: 3vw !important;
 	}
 }
 
 
+
+
+
+#join_discord_btn
+{
+	align-self: center;
+}
 
 
 
@@ -273,7 +392,7 @@ body
 	display: flex;
 	flex-direction: column;
 }
-*/
+
 
 
 

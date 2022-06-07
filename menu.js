@@ -59,6 +59,8 @@ function spawn_tf_buttons()
 			var hastext = '';
 		}
 		*/
+
+
 		var btnhtm = ehtml(`
 			<a` + addid + ` ` + addhref + ` class="tfbtn">
 				<div class="bbgg">
@@ -88,6 +90,11 @@ function spawn_tf_buttons()
 
 		if (tfb.innerText.trim() == ''){
 			btnhtm.classList.add('tfbtn_icon_only')
+		}
+
+		if (tfb.getAttribute('scale') != null){
+			// var trf = 'scale(' + tfb.getAttribute('scale') + ')';
+			btnhtm.querySelector('.tfbtn_bitmap_icon, svg').style.transform = 'scale(' + tfb.getAttribute('scale') + ')';
 		}
 
 
