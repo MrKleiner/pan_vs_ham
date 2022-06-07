@@ -91,12 +91,12 @@ body
 
 #menu_btn_news svg
 {
-	transform: scale(1.5);
+	/*transform: scale(1.5);*/
 }
 
 #menu_btn_info svg 
 {
-	transform: scale(1.2);
+	/*transform: scale(1.2);*/
 }
 
 .menu_panel a.tfbtn:hover svg

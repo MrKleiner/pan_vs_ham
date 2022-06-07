@@ -4,7 +4,8 @@ imgdragfixup()
 spawn_tf_buttons()
 // init_menu()
 // important: has to be last
-svgappender()
+// svgappender()
+// svgappenders()
 
 
 
@@ -81,33 +82,51 @@ function spawn_tf_buttons()
 		}
 
 		if (tfb.getAttribute('icon') != null && tfb.getAttribute('img') == null){
-			btnhtm.prepend(ehtml('<appendsvg svgsrc="' + tfb.getAttribute('icon') + '"></appendsvg>'))
+
+			var pootis = ehtml('<appendsvg svgsrc="' + tfb.getAttribute('icon') + '"></appendsvg>')
+			btnhtm.prepend(pootis)
+			// await apsvg(btnhtm.querySelector('appendsvg'))
+			if (tfb.getAttribute('scale') != null){
+				apsvg(pootis)
+				.then(function(resolved) {
+					resolved.style.transform = 'scale(' + tfb.getAttribute('scale') + ')';
+					console.log(resolved)
+				});
+			}
 		}
 
 		if (tfb.getAttribute('img') != null){
-			btnhtm.prepend(ehtml('<img class="tfbtn_bitmap_icon" src="' + tfb.getAttribute('img') + '">'))
+			var imhtm = ehtml('<img class="tfbtn_bitmap_icon" src="' + tfb.getAttribute('img') + '">')
+			btnhtm.prepend(imhtm)
+			if (tfb.getAttribute('scale') != null && btnhtm.querySelector('.tfbtn_bitmap_icon') != null){
+				imhtm.style.transform = 'scale(' + tfb.getAttribute('scale') + ')';
+			}
 		}
 
 		if (tfb.innerText.trim() == ''){
 			btnhtm.classList.add('tfbtn_icon_only')
 		}
-
+/*
 		if (tfb.getAttribute('scale') != null){
 			// var trf = 'scale(' + tfb.getAttribute('scale') + ')';
-			btnhtm.querySelector('.tfbtn_bitmap_icon, svg').style.transform = 'scale(' + tfb.getAttribute('scale') + ')';
+			if (btnhtm.querySelector('.tfbtn_bitmap_icon, svg'))
+			svgappenders_v2(.querySelector('.tfbtn_bitmap_icon, svg'))
+			.then(function(resolved) {
+				btnhtm.querySelector('.tfbtn_bitmap_icon, svg').style.transform = 'scale(' + tfb.getAttribute('scale') + ')';
+			});
+			
 		}
-
+*/
 
 		tfb.replaceWith(btnhtm)
 
 	}
 
-	svgappender()
+	svgappenders()
 }
 
 function svgappender()
 {
-
 	document.querySelectorAll('appendsvg').forEach(function(userItem) {
 		fetch(userItem.getAttribute('svgsrc'), {
 			'headers': {
@@ -130,6 +149,7 @@ function svgappender()
 async function apsvg(e)
 {
 	return new Promise(function(resolve, reject){
+		if (e.getAttribute('pending') == '1'){resolve(true)}
 		fetch(e.getAttribute('svgsrc'), {
 			'headers': {
 				'accept': '*/*',
@@ -138,11 +158,11 @@ async function apsvg(e)
 			}
 		})
 		.then(function(response) {
-			
 			// console.log(response.status);
 			response.text().then(function(data) {
-				e.replaceWith(ehtml(data));
-				resolve(true);
+				var dathtm =ehtml(data)
+				e.replaceWith(dathtm);
+				resolve(dathtm);
 			});
 		});
 	});
@@ -153,6 +173,36 @@ async function svgappenders()
 {
 	for (var asvg of document.querySelectorAll('appendsvg')){
 		await apsvg(asvg)
+		// apsvg.parentNode.replaceChild(newItem, listItem);
+	}
+}
+
+async function svgappenders_v2()
+{
+	return new Promise(async function(resolve, reject){
+		for (var asvg of document.querySelectorAll('appendsvg')){
+			
+			if (asvg.getAttribute('pending' != '1')){
+				asvg.setAttribute('pending', '1')
+				await apsvg(asvg)
+			}
+			
+			// apsvg.parentNode.replaceChild(newItem, listItem);
+		}
+		resolve(true)
+	});
+}
+
+
+async function svgappenders_v3()
+{
+	for (var asvg of document.querySelectorAll('appendsvg')){
+		
+		if (asvg.getAttribute('pending' != '1')){
+			asvg.setAttribute('pending', '1')
+			await apsvg(asvg)
+		}
+		
 		// apsvg.parentNode.replaceChild(newItem, listItem);
 	}
 }
