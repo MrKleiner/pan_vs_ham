@@ -41,6 +41,40 @@ with open(str(this_dir / 'sys' / 'menu_graph.json'), 'w') as defmenu:
 
 
 
+# =====================================
+# 			index gallery
+# =====================================
+
+#
+# index sprays
+#
+
+gallery = {
+	'sprays': [],
+	'other': []
+}
+
+for vtf in (this_dir / 'assets' / 'gallery' / 'posters').rglob('*'):
+	cstruct = (this_dir / 'assets' / 'gallery' / 'vtf_sprays' / (vtf.stem + '.vtf'))
+	print(cstruct)
+	if cstruct.is_file():
+		gallery['sprays'].append({
+			'gui': str(vtf.relative_to(this_dir).as_posix()),
+			'vtf': str(cstruct.relative_to(this_dir).as_posix()) if cstruct.is_file() else None
+		})
+
+
+
+with open(str(this_dir / 'sys' / 'gallery.json'), 'w') as defgal:
+	defgal.write(json.dumps(gallery, indent=4, sort_keys=True))
+
+
+
+
+
+
+
+
 
 
 

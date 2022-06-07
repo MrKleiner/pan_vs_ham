@@ -1,0 +1,17 @@
+{
+    "other": [],
+    "sprays": [
+        {
+            "gui": "assets/gallery/posters/beat_meat.jpeg",
+            "vtf": "assets/gallery/vtf_sprays/beat_meat.vtf"
+        },
+        {
+            "gui": "assets/gallery/posters/eat_ham.jpeg",
+            "vtf": "assets/gallery/vtf_sprays/eat_ham.vtf"
+        },
+        {
+            "gui": "assets/gallery/posters/poster_main.png",
+            "vtf": "assets/gallery/vtf_sprays/poster_main.vtf"
+        }
+    ]
+}

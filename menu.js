@@ -216,11 +216,6 @@ function init_info_page()
 	    });
 	});
 
-
-
-
-
-
 }
 
 
@@ -230,11 +225,54 @@ function init_info_page()
 
 
 
+// gallery_sprays
+function init_gallery()
+{
+	fetch('sys/gallery.json', {
+		'headers': {
+			'accept': '*/*',
+			'cache-control': 'no-cache',
+			'pragma': 'no-cache'
+		},
+		// 'referrerPolicy': 'strict-origin-when-cross-origin',
+		'body': null,
+		'method': 'GET',
+		'mode': 'cors',
+		'credentials': 'omit'
+	})
+	.then(function(fuck) {
+	    console.log(fuck.status);
+	    fuck.json().then(function(data) {
+	        console.log(data);
+	        grow_gallery(data)
+	    });
+	});
+}
+
+
+function grow_gallery(info)
+{
+
+	// sprays
+	var spr = document.querySelector('#gallery_sprays .gallery_cat_content')
+	for (var gl of info['sprays']){
+		var im = ehtml(`
+			<div class="gallery_spray_entry">
+				<img src="` + gl['gui'] + `">
+				<a download class="gallery_spray_entry_dl" href="` + gl['vtf'] + `">
+					VTF<appendsvg svgsrc="assets/download.svg"></appendsvg>
+				</a>
+			</div>
+		`)
+		spr.append(im)
+	}
+
+	svgappender()
 
 
 
 
-
+}
 
 
 

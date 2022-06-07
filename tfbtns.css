@@ -125,6 +125,12 @@ a.tfbtn img.tfbtn_bitmap_icon
 {
 	justify-content: center;
 	min-width: 50px;
+	overflow: hidden;
+}
+
+.tfbtn_icon_only .imgmid
+{
+	min-width: 3px;
 }
 
 

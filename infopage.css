@@ -52,7 +52,8 @@ body
 	/*fill: white;*/
 	/*width: 70%;*/
 	/*height: 70%;*/
-	transform: translateX(10px) scale(1.7);
+	/*transform: translateX(10px) scale(1.7);*/
+	transform: scale(1.7);
 }
 
 

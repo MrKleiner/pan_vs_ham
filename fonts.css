@@ -7,6 +7,13 @@
 
 @font-face
 {
+	font-family: 'tf2_primary';
+	font-weight: 100;
+	src: url('fonts/tf2.ttf');
+}
+
+@font-face
+{
 	font-family: 'tf2_bold';
 	font-weight: 100;
 	src: url('fonts/tf2_bold.ttf');
