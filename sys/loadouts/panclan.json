@@ -1,0 +1,42 @@
+{
+	"title": "Pan Clan",
+	"preview": "assets/loadouts/vis/panclan.png",
+	
+	
+	
+	"primary": {
+		"img": "assets/loadouts/icons/workshop/weapons/c_models/c_paratrooper_pack/c_paratrooper_pack_large.png",
+		"name": "The B.A.S.E. Jumper"
+	},
+	"secondary": {
+		"img": "assets/loadouts/icons/weapons/c_models/c_sticky_jumper/c_sticky_jumper_large.png",
+		"name": "The Sticky Jumper"
+	},
+	"melee": {
+		"img": "assets/loadouts/icons/player/items/all_class/all_pan_large.png",
+		"name": "The Frying Pan"
+	},
+
+
+
+	"cosmetic_1": {
+		"img": "assets/loadouts/icons/player/items/demo/demo_scotchbonnet_large.png",
+		"name": "Scotch Bonnet"
+	},
+	"cosmetic_2": {
+		"img": "assets/loadouts/icons/workshop/player/items/all_class/hwn2021_scariest_mask/hwn2021_scariest_mask_large.png",
+		"name": "The Scariest Mask Ever"
+	},
+	"cosmetic_3": {
+		"img": "assets/loadouts/icons/player/items/all_class/xms_allclass_giftbadge.png",
+		"name": "The Spirit Of Giving"
+	}
+}
+
+
+
+
+
+
+
+

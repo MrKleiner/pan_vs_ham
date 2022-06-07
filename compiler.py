@@ -75,9 +75,16 @@ with open(str(this_dir / 'sys' / 'gallery.json'), 'w') as defgal:
 
 
 
+# =====================================
+# 			index loadouts
+# =====================================
+loadouts = []
+for ld in (this_dir / 'sys' / 'loadouts').rglob('*'):
+	with open(str(ld), 'r') as r_ld:
+		# defgal.write(json.dumps(gallery, indent=4, sort_keys=True))
+		loadouts.append(json.loads(r_ld.read()))
 
 
 
-
-
-
+with open(str(this_dir / 'sys' / 'loadouts.json'), 'w') as ldw:
+	ldw.write(json.dumps(loadouts, indent=4, sort_keys=True))

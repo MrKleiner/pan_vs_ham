@@ -1,0 +1,42 @@
+{
+	"title": "Pan Clan Soldier",
+	"preview": "assets/loadouts/vis/panclan_soldier.png",
+	
+	
+	
+	"primary": {
+		"img": "assets/loadouts/icons/weapons/c_models/c_rocketjumper/c_rocketjumper_large.png",
+		"name": "The Rocket Jumper"
+	},
+	"secondary": {
+		"img": "assets/loadouts/icons/workshop/weapons/c_models/c_paratrooper_pack/c_paratrooper_pack_large.png",
+		"name": "The B.A.S.E. Jumper"
+	},
+	"melee": {
+		"img": "assets/loadouts/icons/player/items/all_class/all_pan_large.png",
+		"name": "The Frying Pan"
+	},
+
+
+
+	"cosmetic_1": {
+		"img": "assets/loadouts/icons/player/items/all_class/dueling_medal_bronze_large.png",
+		"name": "Dueling Badge"
+	},
+	"cosmetic_2": {
+		"img": "assets/loadouts/icons/player/items/soldier/fdu_large.png",
+		"name": "Fance Dress Uniform"
+	},
+	"cosmetic_3": {
+		"img": "assets/loadouts/icons/workshop/player/items/all_class/hwn2021_scariest_mask/hwn2021_scariest_mask_large.png",
+		"name": "The Scariest Mask Ever"
+	}
+}
+
+
+
+
+
+
+
+

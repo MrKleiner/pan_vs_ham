@@ -215,9 +215,6 @@ async function svgappenders_v3()
 
 
 
-
-
-
 function init_menu()
 {
 
@@ -329,6 +326,87 @@ function grow_gallery(info)
 
 
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function init_loadouts()
+{
+	fetch('sys/loadouts.json', {
+		'headers': {
+			'accept': '*/*',
+			'cache-control': 'no-cache',
+			'pragma': 'no-cache'
+		},
+		// 'referrerPolicy': 'strict-origin-when-cross-origin',
+		'body': null,
+		'method': 'GET',
+		'mode': 'cors',
+		'credentials': 'omit'
+	})
+	.then(function(fuck) {
+	    console.log(fuck.status);
+	    fuck.json().then(function(data) {
+	        console.log(data);
+	        construct_loadouts(data)
+	    });
+	});
+
+}
+
+
+
+
+function construct_loadouts(dt)
+{
+	for (var ld of dt){
+		var ldhtml = ehtml(`
+		<div class="loadout">
+			<div class="loadout_title">` + ld['title'] + `</div>
+			<div class="loadout_content">
+				<div class="loadout_left">
+					<dir style="background-image: url('` + (ld['primary']['img'] || '') + `')" class="loadout_primary ld_weapon">
+						<div class="slot_descr">` + (ld['primary']['name'] || '') + `</div>
+					</dir>
+					<dir style="background-image: url('` + (ld['secondary']['img'] || '') + `')" class="loadout_secondary ld_weapon">
+						<div class="slot_descr">` + (ld['secondary']['name'] || '') + `</div>
+					</dir>
+					<dir style="background-image: url('` + (ld['melee']['img'] || '') + `')" class="loadout_melee ld_weapon">
+						<div class="slot_descr">` + (ld['melee']['name'] || '') + `</div>
+					</dir>
+				</div>
+				<div class="loadout_mid">
+					<img src="` + ld['preview'] + `">
+				</div>
+				<div class="loadout_right">
+					<div style="background-image: url('` + (ld['cosmetic_1']['img'] || '') + `')" class="cosmetic_1 ld_cosmetic">
+						<div class="slot_descr">` + (ld['cosmetic_1']['name'] || '') + `</div>
+					</div>
+					<div style="background-image: url('` + (ld['cosmetic_2']['img'] || '') + `')" class="cosmetic_2 ld_cosmetic">
+						<div class="slot_descr">` + (ld['cosmetic_2']['name'] || '') + `</div>
+					</div>
+					<div style="background-image: url('` + (ld['cosmetic_3']['img'] || '') + `')" class="cosmetic_3 ld_cosmetic">
+						<div class="slot_descr">` + (ld['cosmetic_3']['name'] || '') + `</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		`)
+
+		document.querySelector('#lds').append(ldhtml)
+	}
 }
 
 

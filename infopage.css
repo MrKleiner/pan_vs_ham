@@ -87,9 +87,9 @@ body
 	box-shadow: 2px 2px 5px 1px #070707;
 	overflow: hidden;
 	border-radius: 6px;
-	min-width: 300px;
-	max-width: 650px;
-	min-width: 424px;
+	min-width: 650px;
+	max-width: 655px;
+	/*min-width: 424px;*/
 	
 }
 

@@ -1,0 +1,215 @@
+@import url('fonts.css');
+@import url('tfbtns.css');
+
+*
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+
+
+html
+{
+	width: 100%;
+	height: 100%;
+	/*min-height: 650px;*/
+}
+
+body
+{
+	background-image: url('assets/mainbg_top_shade.png'), url('assets/mainbg_mid_shade.png');
+	background-size: 500px;
+	background-position: top;
+	background-repeat: repeat-x, repeat, repeat;
+	flex-direction: column;
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+
+#darkener
+{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	/*z-index: 1;*/
+	z-index: -1;
+}
+
+
+#topbar
+{
+	height: 50px;
+	width: 100%;
+	display: flex;
+
+}
+
+#return_home
+{
+	height: 100%;
+	aspect-ratio: 1/1;
+	/*padding: 5px;*/
+}
+
+#return_home .btntext
+{
+	display: none;
+}
+
+#return_home svg
+{
+	/*fill: white;*/
+	/*width: 70%;*/
+	/*height: 70%;*/
+	/*transform: translateX(0px) scale(1.7);*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loadout
+{
+	margin-top: 90px;
+	display: flex;
+	flex-direction: column;
+	height: 750px;
+	padding: 0px 70px 0px 70px;
+	align-items: center;
+	margin-bottom: 90px;
+}
+
+div.loadout:not(:first-child)
+{
+	margin-top: 140px;
+}
+
+.loadout_title
+{
+	text-align: center;
+	font-size: 50px;
+	color: #f5e7de;
+	font-family: 'tf2_bold';
+}
+
+.loadout_content
+{
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+
+}
+
+.loadout_left, .loadout_right
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+
+
+.ld_weapon, .ld_cosmetic
+{
+	/*width: 200px;*/
+	/*height: 100px;*/
+	display: flex;
+	width: 315px;
+	height: 157px;
+	border-radius: 10px;
+	border: 2px solid #75675f;
+	background-color: #292526;
+	color: #ffd800;
+	/*vertical-align: bottom;*/
+	/*text-align: center;*/
+	align-items: flex-end;
+	justify-content: center;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.ld_weapon:not(:first-child), .ld_cosmetic:not(:first-child)
+{
+	margin-top: 20px;
+}
+
+.loadout_left, .loadout_right
+{
+	/*width: 250px;*/
+}
+
+.loadout_mid
+{
+	display: flex;
+	/*flex-grow: 1;*/
+	/*background: blue;*/
+	/*width: 13vw;*/
+/*	max-width: 800px;
+	min-width: 600px;*/
+	/*height: 100%;*/
+}
+
+.loadout_mid img
+{
+    display: flex;
+    width: 28vw;
+    height: auto;
+    flex-grow: 1;
+    object-position: center;
+    object-fit: contain;
+	max-width: 800px;
+	min-width: 600px;
+}
+
+
+.loadout_mid
+{
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.slot_descr
+{
+	/*display: flex;*/
+	text-align: center;
+	margin-bottom: 12px;
+	font-family: 'tf2_bold', sans-serif;
+	font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

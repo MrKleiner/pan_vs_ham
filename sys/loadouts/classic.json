@@ -1,0 +1,42 @@
+{
+	"title": "Classic",
+	"preview": "assets/loadouts/vis/classic.png",
+	
+	
+	
+	"primary": {
+		"img": "assets/loadouts/icons/workshop/player/items/demo/pegleg/pegleg_large.png",
+		"name": "The Bootlegger"
+	},
+	"secondary": {
+		"img": "assets/loadouts/icons/weapons/c_models/c_targe/c_targe_large.png",
+		"name": "Chargin' Targe"
+	},
+	"melee": {
+		"img": "assets/loadouts/icons/player/items/all_class/all_pan_large.png",
+		"name": "The Frying Pan"
+	},
+
+
+
+	"cosmetic_1": {
+		"img": "assets/loadouts/icons/player/items/all_class/treasure_hat_02_large.png",
+		"name": "Bounty Hat"
+	},
+	"cosmetic_2": {
+		"img": null,
+		"name": null
+	},
+	"cosmetic_3": {
+		"img": null,
+		"name": null
+	}
+}
+
+
+
+
+
+
+
+
