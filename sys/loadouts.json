@@ -5,8 +5,8 @@
             "name": "Bounty Hat"
         },
         "cosmetic_2": {
-            "img": null,
-            "name": null
+            "img": "assets/loadouts/icons/player/items/demo/ttg_glasses_large.png",
+            "name": "Dangeresque, Too?"
         },
         "cosmetic_3": {
             "img": null,
