@@ -37,7 +37,7 @@
             "name": "The Scariest Mask Ever"
         },
         "cosmetic_3": {
-            "img": "assets/loadouts/icons/player/items/all_class/xms_allclass_giftbadge.png",
+            "img": "assets/loadouts/icons/player/items/all_class/xms_allclass_giftbadge_large.png",
             "name": "The Spirit Of Giving"
         },
         "melee": {
@@ -62,7 +62,7 @@
         },
         "cosmetic_2": {
             "img": "assets/loadouts/icons/player/items/soldier/fdu_large.png",
-            "name": "Fance Dress Uniform"
+            "name": "Fancy Dress Uniform"
         },
         "cosmetic_3": {
             "img": "assets/loadouts/icons/workshop/player/items/all_class/hwn2021_scariest_mask/hwn2021_scariest_mask_large.png",

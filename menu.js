@@ -411,6 +411,34 @@ function construct_loadouts(dt)
 
 
 
+function init_codex()
+{
+	for (var cx of document.querySelectorAll('codex')){
+		console.log(cx.innerHTML)
+		var c = `
+			<div class="codex_point">
+				<img draggable="false" src="assets/ulpoint.png">
+			</div>
+			<div class="codex_text">` + cx.innerHTML + `</div>
+		`;
+
+		cx.innerHTML = c
+	}
+
+	document.querySelector('div#codex').style = null
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

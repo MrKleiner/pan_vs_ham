@@ -45,7 +45,7 @@ body
 	height: 50px;
 	width: 100%;
 	display: flex;
-
+	position: fixed;
 }
 
 #return_home
