@@ -37,7 +37,7 @@ function rnd_e(ar)
 	return ar[Math.floor(Math.random()*ar.length)];
 }
 
-function spawn_tf_buttons()
+async function spawn_tf_buttons()
 {
 /*			<div id="testbtn">
 				<div class="bbgg">
@@ -49,7 +49,9 @@ function spawn_tf_buttons()
 			</div>
 */
 
-	for (var tfb of document.querySelectorAll('tfbtn')){
+	document.querySelectorAll('tfbtn').forEach(async function(tfb) {
+
+
 		var btext = tfb.textContent
 		if (tfb.hasAttribute('id')){var addid = ' id="' + tfb.getAttribute('id') + '"'}else{var addid = ''}
 		if (tfb.hasAttribute('href')){var addhref = 'href="' + tfb.getAttribute('href') + '"'}else{var addhref = ''}
@@ -82,16 +84,21 @@ function spawn_tf_buttons()
 		}
 
 		if (tfb.getAttribute('icon') != null && tfb.getAttribute('img') == null){
-
+			var setscale = tfb.getAttribute('scale') + '';
 			var pootis = ehtml('<appendsvg svgsrc="' + tfb.getAttribute('icon') + '"></appendsvg>')
 			btnhtm.prepend(pootis)
 			// await apsvg(btnhtm.querySelector('appendsvg'))
 			if (tfb.getAttribute('scale') != null){
-				apsvg(pootis)
+				await apsvg(pootis)
+				btnhtm.querySelector('svg').style.transform = 'scale(' + setscale + ')';
+				
+				/*
 				.then(function(resolved) {
-					resolved.style.transform = 'scale(' + tfb.getAttribute('scale') + ')';
+					// resolved.style.transform = 'scale(' + setscale + ')';
+					btnhtm.querySelector('svg').style.transform = 'scale(' + setscale + ')';
 					console.log(resolved)
 				});
+				*/
 			}
 		}
 
@@ -119,6 +126,22 @@ function spawn_tf_buttons()
 */
 
 		tfb.replaceWith(btnhtm)
+
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+	for (var tfb of document.querySelectorAll('tfbtn')){
+
 
 	}
 
@@ -160,7 +183,7 @@ async function apsvg(e)
 		.then(function(response) {
 			// console.log(response.status);
 			response.text().then(function(data) {
-				var dathtm =ehtml(data)
+				var dathtm = ehtml(data)
 				e.replaceWith(dathtm);
 				resolve(dathtm);
 			});

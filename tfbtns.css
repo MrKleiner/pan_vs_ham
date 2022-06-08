@@ -1,6 +1,11 @@
 
 /*===============================*/
 
+tfbtn
+{
+	display: none;
+}
+
 .tfbtn
 {
 	/*all: unset;*/
