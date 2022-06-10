@@ -279,8 +279,10 @@ function await_image_cache(imgu)
 
 	    if (img.complete) {
 	        resolve(true);
+	        console.log('preloaded alr');
 	    } else {
 	        img.onload = () => {
+	        	console.log('precached ' + imgu);
 	            resolve(true);
 	        };
 
@@ -318,49 +320,20 @@ async function spawn_menu()
 
 	await await_image_cache(menufg)
 	await await_image_cache(menubg)
-	await await_image_cache(panimg)
-	await await_video(vidurl)
 
 	document.body.style.backgroundImage = 'url("' + menufg + '"), url("' + menubg + '")';
-	const vids = document.querySelectorAll('#menu_title video');
-	vids[0].src = vidurl;
-	vids[1].src = vidurl;
 
+	await await_image_cache(panimg)
 	document.querySelector('#menu_title img').src = panimg;
-
 	for (var unh of document.querySelectorAll('#menu_title video, #menu_title img')){
 		unh.removeAttribute('style');
 	}
+
+	await await_video(vidurl)
+	const vids = document.querySelectorAll('#menu_title video');
+	vids[0].src = vidurl;
+	vids[1].src = vidurl;
 }
-
-
-
-function init_info_page()
-{
-	fetch('sys/tmptext.txt', {
-		'headers': {
-			'accept': '*/*',
-			'cache-control': 'no-cache',
-			'pragma': 'no-cache'
-		},
-		// 'referrerPolicy': 'strict-origin-when-cross-origin',
-		'body': null,
-		'method': 'GET',
-		'mode': 'cors',
-		'credentials': 'omit'
-	})
-	.then(function(fuck) {
-	    console.log(fuck.status);
-	    fuck.text().then(function(data) {
-	        console.log(data);
-	        document.querySelector('#quicktext').replaceWith(data);
-	    });
-	});
-
-}
-
-
-
 
 
 
@@ -409,9 +382,6 @@ function grow_gallery(info)
 	}
 
 	svgappender()
-
-
-
 
 }
 

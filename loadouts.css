@@ -18,10 +18,11 @@ html
 
 body
 {
-	background-image: url('assets/mainbg_top_shade.png'), url('assets/mainbg_mid_shade.png');
+	/*background: rgba(0, 0, 0, 0.5);*/
+	background-image: url('assets/dark/b8.png'), url('assets/mainbg_top_shade.png'), url('assets/mainbg_mid_shade.png');
 	background-size: 500px;
 	background-position: top;
-	background-repeat: repeat-x, repeat, repeat;
+	background-repeat: repeat, repeat-x, repeat, repeat;
 	flex-direction: column;
 	display: flex;
 	width: 100%;
@@ -174,13 +175,14 @@ div.loadout:not(:first-child)
 .loadout_mid img
 {
     display: flex;
-    width: 28vw;
+    width: 38vw;
     height: auto;
     flex-grow: 1;
     object-position: center;
     object-fit: contain;
-	max-width: 800px;
-	min-width: 600px;
+	max-width: 810px;
+	min-width: 400px;
+	background: none;
 }
 
 
@@ -213,3 +215,48 @@ div.loadout:not(:first-child)
 
 
 
+@media only screen and (hover: none) and (pointer: coarse)
+{
+	.loadout_content
+	{
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.loadout_mid
+	{
+		width: 100%;
+		order: -1;
+	}
+
+	.loadout
+	{
+		height: auto;
+	}
+
+	.ld_weapon, .ld_cosmetic
+	{
+		width: calc(315px * 1.25);
+		height: calc(157px * 1.25);
+		margin-left: 15px;
+		/*width: 315px;*/
+		/*height: 157px;*/
+	}
+
+	.slot_descr
+	{
+		font-size: 4vw;
+	}
+
+	#return_home
+	{
+		min-height: 100px;
+	}
+
+	#return_home svg
+	{
+		width: 40%;
+		height: 40%;
+	}
+
+}

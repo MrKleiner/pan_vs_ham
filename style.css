@@ -89,16 +89,6 @@ body
 	margin-left: 10px;
 }
 
-#menu_btn_news svg
-{
-	/*transform: scale(1.5);*/
-}
-
-#menu_btn_info svg 
-{
-	/*transform: scale(1.2);*/
-}
-
 .menu_panel a.tfbtn:hover svg
 {
 	fill: #f5e7de;
@@ -279,19 +269,32 @@ body
 
 	#rside_poster
 	{
-		height: 90vw;
+		height: 80vw;
 		margin: 0px;
 		margin-top: 50px;
+		max-height: unset;
 	}
 
 	#join_discord_btn .btntext, #lside .btntext
 	{
-		font-size: 5vw;
+		font-size: 6.5vw;
 	}
 
 	a.tfbtn svg, a.tfbtn .tfbtn_bitmap_icon
 	{
-		width: 3vw !important;
+		height: 90% !important;
+		width: 6vw !important;
+		transform: none !important;
+	}
+
+	body
+	{
+		/*padding-bottom: 300px;*/
+	}
+
+	.menu_panel_title
+	{
+		font-size: 5vw;
 	}
 }
 

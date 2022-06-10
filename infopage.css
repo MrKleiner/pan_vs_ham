@@ -252,3 +252,67 @@ body
 
 
 
+@media only screen and (hover: none) and (pointer: coarse)
+{
+	#return_home
+	{
+		min-height: 100px;
+	}
+
+	#return_home svg
+	{
+		width: 40%;
+		height: 40%;
+	}
+
+	.infobox_step_header
+	{
+		font-size: 4vw !important;
+	}
+
+	.infobox
+	{
+		display: flex;
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 90%;
+		max-width: unset;
+	}
+
+	#infopage_lside
+	{
+		display: flex;
+		width: 100%;
+		height: auto;
+		overflow-y: unset;
+		/*padding-left: 20px; */
+		/*padding-right: 20px;*/
+		/*justify-content: center;*/
+		align-items: center;
+	}
+
+	html
+	{
+		overflow-x: hidden;
+		height: auto;
+	}
+
+	.infobox_top
+	{
+		font-size: 5vw;
+	}
+
+	.infobox_step_text
+	{
+		font-size: 2vw;
+	}
+
+}
+
+
+
+
+
+
+
+

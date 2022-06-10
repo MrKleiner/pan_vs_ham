@@ -32,23 +32,14 @@ body
 
 body
 {
-	background-image: url('assets/mainbg_top_shade.png'), url('assets/mainbg_mid_shade.png');
+	background-image: url('assets/dark/b8.png'), url('assets/mainbg_top_shade.png'), url('assets/mainbg_mid_shade.png');
 	background-size: 300px;
 	background-position: top;
-	background-repeat: repeat-x, repeat, repeat;
+	background-repeat: repeat, repeat-x, repeat, repeat;
 	flex-direction: column;
 	display: flex;
 }
 
-#darkener
-{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.6);
-	/*z-index: 1;*/
-	z-index: -1;
-}
 
 #topbar
 {
@@ -191,7 +182,20 @@ body
 
 
 
+@media only screen and (hover: none) and (pointer: coarse)
+{
+	#return_home
+	{
+		min-height: 100px;
+	}
 
+	#return_home svg
+	{
+		width: 40%;
+		height: 40%;
+	}
+
+}
 
 
 
