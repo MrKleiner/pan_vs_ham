@@ -7,8 +7,17 @@ spawn_tf_buttons()
 // svgappender()
 // svgappenders()
 
-
-
+window.beautyload = 0;
+function menu_beautyload()
+{
+	var ecount = 6
+	window.beautyload += 1
+	if (window.beautyload >= ecount){
+		for (var unh of document.querySelectorAll('#menu_title video, #menu_title img')){
+			unh.removeAttribute('style');
+		}
+	}
+}
 
 
 
@@ -263,10 +272,47 @@ function init_menu()
 	    });
 	});
 }
+function checkIfImageExists(url, callback) {
+    const img = new Image();
+    img.src = url;
 
-function spawn_menu()
+    if (img.complete) {
+        callback(true);
+    } else {
+        img.onload = () => {
+            callback(true);
+        };
+
+        img.onerror = () => {
+            callback(false);
+        };
+    }
+}
+async function spawn_menu()
 {
+	var menufg = 'assets/menu/fg/regular/' + rnd_e(window.menu_graph['fg']['fgs_regular']);
+	var menubg = 'assets/menu/bg/regular/' + rnd_e(window.menu_graph['bg']['bgs_regular']);
+
+
+	// document.body.style.backgroundImage = 'url("assets/menu/fg/regular/' + rnd_e(window.menu_graph['fg']['fgs_regular']) + '"), url("assets/menu/bg/regular/' + rnd_e(window.menu_graph['bg']['bgs_regular']) + '")'
+	// return
+	await checkIfImageExists(menufg, (exists) => {
+	    if (exists) {
+	        menu_beautyload()
+	    } else {
+	        menu_beautyload()
+	    }
+	});
+
+	await checkIfImageExists(menubg, (exists) => {
+	    if (exists) {
+	        menu_beautyload()
+	    } else {
+	        menu_beautyload()
+	    }
+	});
 	document.body.style.backgroundImage = 'url("assets/menu/fg/regular/' + rnd_e(window.menu_graph['fg']['fgs_regular']) + '"), url("assets/menu/bg/regular/' + rnd_e(window.menu_graph['bg']['bgs_regular']) + '")'
+
 }
 
 

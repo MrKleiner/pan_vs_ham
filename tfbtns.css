@@ -18,6 +18,8 @@ tfbtn
 	/*height: 200px;*/
 	/*width: 400px;*/
 	overflow: hidden;
+	/*align-items: center;*/
+	/*justify-content: center;*/
 }
 
 .tfbtn *
@@ -56,12 +58,18 @@ tfbtn
 .btntext
 {
 	display: flex;
+	/*flex-direction: column;*/
 	z-index: 2;
 	padding: 10px;
+	/*padding: auto;*/
 	font-family: 'tf2_bold', sans-serif;
 	font-size: 21px;
 	color: #34302d;
 	/*pointer-events: none;*/
+	/*background: red;*/
+	/*align-items: center;*/
+	/*justify-content: center;*/
+	/*text-align: center;*/
 }
 
 .tfbtn [dohover]

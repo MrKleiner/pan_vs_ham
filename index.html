@@ -6,14 +6,17 @@
 		<link rel="stylesheet" href="style.css">
 		<link rel="shortcut icon" href="assets/pan_logo.png" type="image/x-icon">
 	</head>
-	<body onload="init_menu()">
+	<script type="text/javascript">
+		window.beautyload = 0
+	</script>
+	<body onload="init_menu(); menu_beautyload()">
 		<!-- <script src="./apis/crypto_js/3_1_2/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script> -->
 		<div id="lside">
 			<div id="menu_title">
 
-				<video muted autoplay loop src="assets/v4.webm"></video>
-				<video muted autoplay loop src="assets/v4.webm"></video>
-				<img src="assets/pan.png">
+				<video oncanplay="menu_beautyload()" style="visibility: hidden;" muted autoplay loop src="assets/v4.webm"></video>
+				<video oncanplay="menu_beautyload()" style="visibility: hidden;" muted autoplay loop src="assets/v4.webm"></video>
+				<img onload="window.beautyload += 1; console.log('ohplease')" style="visibility: hidden;" src="assets/pan.png">
 			</div>
 
 			<div class="menu_panel" id="info_panel">
