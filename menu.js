@@ -7,18 +7,6 @@ spawn_tf_buttons()
 // svgappender()
 // svgappenders()
 
-window.beautyload = 0;
-function menu_beautyload()
-{
-	var ecount = 6
-	window.beautyload += 1
-	if (window.beautyload >= ecount){
-		for (var unh of document.querySelectorAll('#menu_title video, #menu_title img')){
-			unh.removeAttribute('style');
-		}
-	}
-}
-
 
 
 function imgdragfixup()
@@ -57,6 +45,14 @@ async function spawn_tf_buttons()
 				<div class="btntext">Join the community!</div>
 			</div>
 */
+	await await_image_cache('assets/btn/tfbtn_l.png')
+	await await_image_cache('assets/btn/tfbtn_m.png')
+	await await_image_cache('assets/btn/tfbtn_r.png')
+
+	await await_image_cache('assets/btn/tfbtn_h_l.png')
+	await await_image_cache('assets/btn/tfbtn_h_m.png')
+	await await_image_cache('assets/btn/tfbtn_h_r.png')
+
 
 	document.querySelectorAll('tfbtn').forEach(async function(tfb) {
 
@@ -100,7 +96,7 @@ async function spawn_tf_buttons()
 			if (tfb.getAttribute('scale') != null){
 				await apsvg(pootis)
 				btnhtm.querySelector('svg').style.transform = 'scale(' + setscale + ')';
-				
+
 				/*
 				.then(function(resolved) {
 					// resolved.style.transform = 'scale(' + setscale + ')';
@@ -272,47 +268,69 @@ function init_menu()
 	    });
 	});
 }
-function checkIfImageExists(url, callback) {
-    const img = new Image();
-    img.src = url;
 
-    if (img.complete) {
-        callback(true);
-    } else {
-        img.onload = () => {
-            callback(true);
-        };
 
-        img.onerror = () => {
-            callback(false);
-        };
-    }
+
+function await_image_cache(imgu)
+{
+	return new Promise(function(resolve, reject){
+	    const img = new Image();
+	    img.src = imgu;
+
+	    if (img.complete) {
+	        resolve(true);
+	    } else {
+	        img.onload = () => {
+	            resolve(true);
+	        };
+
+	        img.onerror = () => {
+	            resolve(false);
+	        };
+	    }
+	});
 }
+
+function await_video(vidu)
+{
+	return new Promise(function(resolve, reject){
+	    const video = document.createElement('video');
+	    video.src = vidu;
+
+	    if (vidu.readyState == 4 || vidu.readyState == 3){
+	    	resolve(true)
+	    }
+
+		video.oncanplay = function() {
+		    resolve(true)
+		};
+
+	});
+}
+
+
 async function spawn_menu()
 {
-	var menufg = 'assets/menu/fg/regular/' + rnd_e(window.menu_graph['fg']['fgs_regular']);
-	var menubg = 'assets/menu/bg/regular/' + rnd_e(window.menu_graph['bg']['bgs_regular']);
+	const menufg = 'assets/menu/fg/regular/' + rnd_e(window.menu_graph['fg']['fgs_regular']);
+	const menubg = 'assets/menu/bg/regular/' + rnd_e(window.menu_graph['bg']['bgs_regular']);
+	const panimg = 'assets/pan.png';
+	const vidurl = 'assets/v4.webm';
 
+	await await_image_cache(menufg)
+	await await_image_cache(menubg)
+	await await_image_cache(panimg)
+	await await_video(vidurl)
 
-	// document.body.style.backgroundImage = 'url("assets/menu/fg/regular/' + rnd_e(window.menu_graph['fg']['fgs_regular']) + '"), url("assets/menu/bg/regular/' + rnd_e(window.menu_graph['bg']['bgs_regular']) + '")'
-	// return
-	await checkIfImageExists(menufg, (exists) => {
-	    if (exists) {
-	        menu_beautyload()
-	    } else {
-	        menu_beautyload()
-	    }
-	});
+	document.body.style.backgroundImage = 'url("' + menufg + '"), url("' + menubg + '")';
+	const vids = document.querySelectorAll('#menu_title video');
+	vids[0].src = vidurl;
+	vids[1].src = vidurl;
 
-	await checkIfImageExists(menubg, (exists) => {
-	    if (exists) {
-	        menu_beautyload()
-	    } else {
-	        menu_beautyload()
-	    }
-	});
-	document.body.style.backgroundImage = 'url("assets/menu/fg/regular/' + rnd_e(window.menu_graph['fg']['fgs_regular']) + '"), url("assets/menu/bg/regular/' + rnd_e(window.menu_graph['bg']['bgs_regular']) + '")'
+	document.querySelector('#menu_title img').src = panimg;
 
+	for (var unh of document.querySelectorAll('#menu_title video, #menu_title img')){
+		unh.removeAttribute('style');
+	}
 }
 
 
