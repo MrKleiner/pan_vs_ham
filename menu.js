@@ -7,6 +7,23 @@ spawn_tf_buttons()
 // svgappender()
 // svgappenders()
 
+document.addEventListener('click', event => {
+
+	// painis enlargement
+    const breasts = event.target.closest('#gallery_root .gallery_cat_content .gallery_spray_entry img, #gallery_root .gallery_cat_content .gallery_other_entry img');
+    if (breasts) {
+    	var imgpreview = document.querySelector('#imgpreview')
+    	imgpreview.src = breasts.src;
+    	imgpreview.style.display = 'flex';
+    }
+
+    const collapse = event.target.closest('#imgpreview');
+    if (collapse) {
+    	document.querySelector('#imgpreview').style.display = 'none';
+    }
+
+});
+
 
 
 function imgdragfixup()
@@ -379,6 +396,27 @@ function grow_gallery(info)
 			</div>
 		`)
 		spr.append(im)
+	}
+
+	// community creations
+	var community = document.querySelector('#gallery_community .gallery_cat_content')
+	for (var gl of info['other']){
+		if (gl['type'] == 'img'){
+			var entr = ehtml(`
+				<div class="gallery_other_entry">
+					<img src="` + gl['url'] + `">
+				</div>
+			`)
+		}
+		if (gl['type'] == 'vid'){
+			var entr = ehtml(`
+				<div class="gallery_other_entry gallery_othre_entry_video">
+					<video controls src="` + gl['url'] + `"></video>
+				</div>
+			`)
+		}
+
+		community.append(entr)
 	}
 
 	svgappender()

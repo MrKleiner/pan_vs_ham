@@ -3,6 +3,32 @@ import subprocess, os, sys, json
 
 this_dir = Path(__file__).parent
 
+supported_imf = [
+	'.apng',
+	'.avif',
+	'.gif',
+	'.jpg',
+	'.jpeg',
+	'.jfif',
+	'.pjpeg',
+	'.pjp',
+	'.png',
+	'.svg',
+	# it appears that the webp rubbish is "performant" and "recommended" for use in web rubbish
+	'.webp',
+	'.bmp',
+	'.ico',
+	'.cur',
+	'.tif',
+	'.tiff'
+]
+
+supported_vidf = [
+	'.mov',
+	'.mp4',
+	'.webm',
+	'.ogg'
+]
 
 menu_graph = {
 	'bg': {},
@@ -65,8 +91,32 @@ for vtf in (this_dir / 'assets' / 'gallery' / 'posters').rglob('*'):
 
 
 
+
+#
+# index community creations
+#
+
+for cr in (this_dir / 'assets' / 'gallery' / 'other').rglob('*'):
+	if cr.suffix.lower() == '.glc':
+		rtx = json.loads(cr.read_text())
+		print(rtx)
+		gallery['other'].append(rtx)
+	else:
+		gallery['other'].append({
+			'url': str(cr.relative_to(this_dir).as_posix()),
+			'type': 'video' if cr.suffix.lower in supported_vidf else 'img'
+		})
+
+
+
+
+
+
 with open(str(this_dir / 'sys' / 'gallery.json'), 'w') as defgal:
 	defgal.write(json.dumps(gallery, indent=4, sort_keys=True))
+
+
+
 
 
 

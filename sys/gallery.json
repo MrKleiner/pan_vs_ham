@@ -1,5 +1,22 @@
 {
-    "other": [],
+    "other": [
+        {
+            "type": "img",
+            "url": "https://preview.redd.it/rfz01xhkav291.png?width=1920&format=png&auto=webp&s=609c46e796201040bd602c0ea4dae17163a8f007"
+        },
+        {
+            "type": "vid",
+            "url": "https://cdn.discordapp.com/attachments/914114793969975376/983747835080097903/Junction.mp4"
+        },
+        {
+            "type": "img",
+            "url": "assets/gallery/other/gibus_scout.webp"
+        },
+        {
+            "type": "img",
+            "url": "assets/pan_logo.png"
+        }
+    ],
     "sprays": [
         {
             "gui": "assets/gallery/posters/beat_meat.jpeg",
@@ -12,6 +29,10 @@
         {
             "gui": "assets/gallery/posters/poster_main.png",
             "vtf": "assets/gallery/vtf_sprays/poster_main.vtf"
+        },
+        {
+            "gui": "assets/gallery/posters/versus.png",
+            "vtf": "assets/gallery/vtf_sprays/versus.vtf"
         }
     ]
 }
