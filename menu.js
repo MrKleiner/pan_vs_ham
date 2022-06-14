@@ -335,9 +335,8 @@ async function spawn_menu()
 	const panimg = 'assets/pan.png';
 	const vidurl = 'assets/v4.webm';
 
-	await await_image_cache(menufg)
 	await await_image_cache(menubg)
-
+	await await_image_cache(menufg)
 	document.body.style.backgroundImage = 'url("' + menufg + '"), url("' + menubg + '")';
 
 	await await_image_cache(panimg)
