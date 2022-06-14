@@ -1,12 +1,12 @@
 {
     "other": [
         {
-            "type": "img",
-            "url": "https://preview.redd.it/rfz01xhkav291.png?width=1920&format=png&auto=webp&s=609c46e796201040bd602c0ea4dae17163a8f007"
-        },
-        {
             "type": "vid",
             "url": "https://cdn.discordapp.com/attachments/914114793969975376/983747835080097903/Junction.mp4"
+        },
+        {
+            "type": "img",
+            "url": "assets/gallery/other/dark_pyro.jpg"
         },
         {
             "type": "img",
@@ -15,6 +15,10 @@
         {
             "type": "img",
             "url": "assets/pan_logo.png"
+        },
+        {
+            "type": "img",
+            "url": "https://preview.redd.it/rfz01xhkav291.png?width=1920&format=png&auto=webp&s=609c46e796201040bd602c0ea4dae17163a8f007"
         }
     ],
     "sprays": [
