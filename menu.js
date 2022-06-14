@@ -288,25 +288,49 @@ function init_menu()
 
 
 
-function await_image_cache(imgu)
+async function await_image_cache(imgu, toblob=false)
 {
 	return new Promise(function(resolve, reject){
-	    const img = new Image();
-	    img.src = imgu;
 
-	    if (img.complete) {
-	        resolve(true);
-	        console.log('preloaded alr');
-	    } else {
-	        img.onload = () => {
-	        	console.log('precached ' + imgu);
-	            resolve(true);
-	        };
+		if (toblob == true){
+			fetch('sys/menu_graph.json', {
+				'headers': {
+					'accept': '*/*'
+				},
+				// 'referrerPolicy': 'strict-origin-when-cross-origin',
+				'body': null,
+				'method': 'GET',
+				'mode': 'cors',
+				'credentials': 'omit'
+			})
+			.then(function(fuck) {
+			    console.log(fuck.status);
+			    fuck.blob().then(function(data) {
+					var urlCreator = window.URL || window.webkitURL;
+					var imageUrl = urlCreator.createObjectURL(data);
+			    	resolve(imageUrl)
+			    });
+			});
 
-	        img.onerror = () => {
-	            resolve(false);
-	        };
-	    }
+		}else{
+
+		    const img = new Image();
+		    img.src = imgu;
+
+		    if (img.complete) {
+		        resolve(true);
+		        console.log('preloaded alr');
+		    } else {
+		        img.onload = () => {
+		        	console.log('precached ' + imgu);
+		            resolve(true);
+		        };
+
+		        img.onerror = () => {
+		            resolve(false);
+		        };
+		    }
+		}
 	});
 }
 
@@ -336,8 +360,16 @@ async function spawn_menu()
 	const vidurl = 'assets/v4.webm';
 
 	await await_image_cache(menubg)
+	await await_image_cache(menubg)
+	await await_image_cache(menufg)
 	await await_image_cache(menufg)
 	document.body.style.backgroundImage = 'url("' + menufg + '"), url("' + menubg + '")';
+
+	const posterurl = 'assets/gallery/posters/poster_main_nolink.png';
+	const pst = document.querySelector('#rside_poster');
+	await await_image_cache(posterurl)
+	pst.src = posterurl;
+	pst.removeAttribute('style');
 
 	await await_image_cache(panimg)
 	document.querySelector('#menu_title img').src = panimg;
