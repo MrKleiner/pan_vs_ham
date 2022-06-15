@@ -136,5 +136,21 @@ for ld in (this_dir / 'sys' / 'loadouts').rglob('*'):
 
 
 
+#
+#	Loadout maker
+#
+
+ld_maker = {
+	'icons': [str(ld_ic.relative_to(this_dir).as_posix()) for ld_ic in (this_dir / 'assets' / 'loadouts' / 'icons').rglob('*.png')],
+	'vis': [str(ld_vi.relative_to(this_dir).as_posix()) for ld_vi in (this_dir / 'assets' / 'loadouts' / 'vis').rglob('*.png')]
+}
+
+with open(str(this_dir / 'sys' / 'ld_maker.json'), 'w') as ldmaker:
+	ldmaker.write(json.dumps(ld_maker, indent=4, sort_keys=True))
+
+
+
+
+
 with open(str(this_dir / 'sys' / 'loadouts.json'), 'w') as ldw:
 	ldw.write(json.dumps(loadouts, indent=4, sort_keys=True))

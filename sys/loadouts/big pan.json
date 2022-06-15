@@ -1,0 +1,28 @@
+{
+    "title": "big pan",
+    "preview": "http://192.168.0.10:8000/assets/loadouts/vis/big_pan.png",
+    "primary": {
+        "img": "http://192.168.0.10:8000/assets/loadouts/icons/workshop/player/items/demo/pegleg/pegleg_large.png",
+        "name": "Bootlegger"
+    },
+    "secondary": {
+        "img": "http://192.168.0.10:8000/assets/loadouts/icons/weapons/c_models/c_targe/c_targe_large.png",
+        "name": "Chargin' Targe"
+    },
+    "melee": {
+        "img": "http://192.168.0.10:8000/assets/loadouts/icons/player/items/all_class/all_pan_large.png",
+        "name": "Frying Pan"
+    },
+    "cosmetic_1": {
+        "img": "http://192.168.0.10:8000/assets/loadouts/icons/workshop/player/items/all_class/sum20_sophisticated_smoker/sum20_sophisticated_smoker_large.png",
+        "name": "Sophisticated Smoker"
+    },
+    "cosmetic_2": {
+        "img": "http://192.168.0.10:8000/assets/loadouts/icons/player/items/demo/demo_chest_back_large.png",
+        "name": "Liquor Locker"
+    },
+    "cosmetic_3": {
+        "img": "http://192.168.0.10:8000/assets/loadouts/icons/player/items/all_class/tuxxy_demo_large.png",
+        "name": "Tuxxy"
+    }
+}

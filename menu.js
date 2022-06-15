@@ -22,6 +22,46 @@ document.addEventListener('click', event => {
     	document.querySelector('#imgpreview').style.display = 'none';
     }
 
+    // activate loadouts
+    const ldedit = event.target.closest('.loadout');
+    if (ldedit && event.altKey && event.ctrlKey) {
+    	loadout_maker_load_icons();
+    }
+
+    // set active
+    const slotedit = event.target.closest('.loadout .ldedit_iconslot');
+    if (slotedit) {
+    	loadout_maker_set_active_slot(slotedit);
+    }
+
+    // set icon
+    const seticon = event.target.closest('#ldmaker_show_icons img');
+    if (seticon) {
+    	window.current_edit_slot.style.backgroundImage = 'url("' + seticon.src + '")';
+    	window.current_edit_slot.setAttribute('compile_icon', seticon.src);
+    }
+
+    // kill icon
+    if (slotedit && event.altKey) {
+    	slotedit.style.backgroundImage = null;
+    }
+
+});
+
+document.addEventListener('change', event => {
+
+    // activate loadouts
+    const ldedit = event.target.closest('#ldmaker_slot_icon_name');
+    if (ldedit) {
+    	loadout_maker_iconsearch();
+    }
+
+    // activate loadouts
+    const ldedit_sname = event.target.closest('#ldmaker_slotname_input');
+    if (ldedit_sname) {
+    	loadout_maker_set_name();
+    }
+
 });
 
 
@@ -553,7 +593,7 @@ function construct_loadouts(dt)
 		</div>
 		`)
 
-		document.querySelector('#lds').append(ldhtml)
+		document.querySelector('#lds').append(ldhtml);
 	}
 }
 
@@ -570,34 +610,182 @@ function init_codex()
 			<div class="codex_text">` + cx.innerHTML + `</div>
 		`;
 
-		cx.innerHTML = c
+		cx.innerHTML = c;
 	}
 
-	document.querySelector('div#codex').style = null
+	document.querySelector('div#codex').style = null;
 }
 
 
+function loadout_maker_load_icons()
+{
+	fetch('sys/ld_maker.json', {
+		'headers': {
+			'accept': '*/*',
+			'cache-control': 'no-cache',
+			'pragma': 'no-cache'
+		},
+		// 'referrerPolicy': 'strict-origin-when-cross-origin',
+		'body': null,
+		'method': 'GET',
+		'mode': 'cors',
+		'credentials': 'omit'
+	})
+	.then(function(fuck) {
+	    console.log(fuck.status);
+	    fuck.json().then(function(data) {
+	        console.log(data);
+	        window.sys_ldmaker = data;
+	        loadout_maker_activator()
+	    });
+	});
+}
 
 
 function loadout_maker_activator()
 {
-	
+	for (var hide of document.querySelectorAll('.loadout')){
+		hide.remove()
+	};
+
+	var ldhtml = ehtml(`
+	<div class="loadout">
+		<div class="loadout_title">Sample Text</div>
+		<div class="loadout_content">
+			<div class="loadout_left">
+				<dir class="loadout_primary ld_weapon ldedit_iconslot">
+					<div class="slot_descr"></div>
+				</dir>
+				<dir class="loadout_secondary ld_weapon ldedit_iconslot">
+					<div class="slot_descr"></div>
+				</dir>
+				<dir class="loadout_melee ld_weapon ldedit_iconslot">
+					<div class="slot_descr"></div>
+				</dir>
+			</div>
+			<div class="loadout_mid">
+				<img src="">
+			</div>
+			<div class="loadout_right">
+				<div class="cosmetic_1 ld_cosmetic ldedit_iconslot">
+					<div class="slot_descr"></div>
+				</div>
+				<div class="cosmetic_2 ld_cosmetic ldedit_iconslot">
+					<div class="slot_descr"></div>
+				</div>
+				<div class="cosmetic_3 ld_cosmetic ldedit_iconslot">
+					<div class="slot_descr"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	`);
+
+	document.querySelector('#lds').append(ldhtml);
+	document.querySelector('#lds').append(ehtml(`
+		<div id="ldmaker_gui">
+			<input type="text" id="ldmaker_slotname_input">
+			<input type="text" id="ldmaker_slot_icon_name">
+			<input onchange="document.querySelector('.loadout_mid img').src = 'assets/loadouts/vis/' + this.value" type="text" id="ldmaker_vis_img_name">
+			<div id="ldmaker_show_icons"></div>
+		</div>
+	`));
+	document.querySelector('.loadout .loadout_title').setAttribute('contenteditable', true);
+
+
+
+
+}
+
+
+function loadout_maker_iconsearch()
+{
+	var query = document.querySelector('#ldmaker_slot_icon_name').value;
+	var imgpool = document.querySelector('#ldmaker_show_icons');
+	document.querySelector('#ldmaker_show_icons').innerHTML = '';
+	for (var search of window.sys_ldmaker['icons']){
+		// console.log(search.split('/').at(-1), query)
+		if (search.split('/').at(-1).includes(query)){
+			imgpool.append(ehtml(`
+				<img src="` + search + `">
+			`));
+		};
+	};
 }
 
 
 
 
+function loadout_maker_set_active_slot(etgt)
+{
+	for (var uns of document.querySelectorAll('.ldedit_iconslot')){
+		uns.style.borderColor = null;
+	}
+	etgt.style.borderColor = 'lime';
+	window.current_edit_slot = etgt;
+	document.querySelector('#ldmaker_slotname_input').value = etgt.querySelector('.slot_descr').innerText;
+}
 
 
 
 
+function loadout_maker_set_name()
+{
+	window.current_edit_slot.querySelector('.slot_descr').innerText = document.querySelector('#ldmaker_slotname_input').value;
+}
+
+function textdl(filename='lizard.txt', text='iguana') {
+	var element = document.createElement('a');
+	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+	element.setAttribute('download', filename);
+
+	element.style.display = 'none';
+	document.body.appendChild(element);
+
+	element.click();
+
+	document.body.removeChild(element);
+}
+
+function compile_loadout()
+{
+	textdl(document.querySelector('.loadout .loadout_title').textContent + '.json', JSON.stringify({
+		"title": document.querySelector('.loadout .loadout_title').textContent,
+		"preview": document.querySelector('.loadout_mid img').src,
+		
+		// loadout_primary
+		// compile_icon
+		
+		"primary": {
+			"img": document.querySelector('.loadout_primary').getAttribute('compile_icon'),
+			"name": document.querySelector('.loadout_primary .slot_descr').textContent
+		},
+		"secondary": {
+			"img": document.querySelector('.loadout_secondary').getAttribute('compile_icon'),
+			"name": document.querySelector('.loadout_secondary .slot_descr').textContent
+		},
+		"melee": {
+			"img": document.querySelector('.loadout_melee').getAttribute('compile_icon'),
+			"name": document.querySelector('.loadout_melee .slot_descr').textContent
+		},
 
 
 
+		"cosmetic_1": {
+			"img": document.querySelector('.cosmetic_1').getAttribute('compile_icon'),
+			"name": document.querySelector('.cosmetic_1 .slot_descr').textContent
+		},
+		"cosmetic_2": {
+			"img": document.querySelector('.cosmetic_2').getAttribute('compile_icon'),
+			"name": document.querySelector('.cosmetic_2 .slot_descr').textContent
+		},
+		"cosmetic_3": {
+			"img": document.querySelector('.cosmetic_3').getAttribute('compile_icon'),
+			"name": document.querySelector('.cosmetic_3 .slot_descr').textContent
+		}
+	}, null, 4))
 
-
-
-
+}
 
 
 

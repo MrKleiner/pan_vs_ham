@@ -111,6 +111,9 @@ div.loadout:not(:first-child)
 	font-size: 50px;
 	color: #f5e7de;
 	font-family: 'tf2_bold';
+	/*min-height: 20px;*/
+	min-width: 100px;
+	display: flex;
 }
 
 .loadout_content
@@ -259,4 +262,25 @@ div.loadout:not(:first-child)
 		height: 40%;
 	}
 
+}
+
+
+
+
+
+
+
+
+#ldmaker_show_icons img
+{
+	width: 200px;
+	height: 200px;
+	background: rgba(255, 255, 255, 0.25);
+	margin: 10px;
+}
+
+
+#ldmaker_show_icons img:hover
+{
+	background: rgba(255, 255, 255, 0.5);
 }
