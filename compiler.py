@@ -39,11 +39,11 @@ menu_graph = {
 # =====================================
 
 # regular
-menu_graph['bg']['bgs_regular'] = [str(bg.name) for bg in (this_dir / 'assets' / 'menu' / 'bg' / 'regular').rglob('*')]
+menu_graph['bg']['bgs_regular'] = [str(bg.relative_to(this_dir).as_posix()) for bg in (this_dir / 'assets' / 'menu' / 'bg' / 'regular').rglob('*')]
 # hw
-menu_graph['bg']['bgs_hw'] = [str(bg.name) for bg in (this_dir / 'assets' / 'menu' / 'bg' / 'hw').rglob('*')]
+menu_graph['bg']['bgs_hw'] = [str(bg.relative_to(this_dir).as_posix()) for bg in (this_dir / 'assets' / 'menu' / 'bg' / 'hw').rglob('*')]
 # xmas
-menu_graph['bg']['bgs_xmas'] = [str(bg.name) for bg in (this_dir / 'assets' / 'menu' / 'bg' / 'xmas').rglob('*')]
+menu_graph['bg']['bgs_xmas'] = [str(bg.relative_to(this_dir).as_posix()) for bg in (this_dir / 'assets' / 'menu' / 'bg' / 'xmas').rglob('*')]
 
 
 
@@ -53,11 +53,11 @@ menu_graph['bg']['bgs_xmas'] = [str(bg.name) for bg in (this_dir / 'assets' / 'm
 # =====================================
 
 # regular
-menu_graph['fg']['fgs_regular'] = [str(fg.name) for fg in (this_dir / 'assets' / 'menu' / 'fg' / 'regular').rglob('*')]
+menu_graph['fg']['fgs_regular'] = [str(fg.relative_to(this_dir).as_posix()) for fg in (this_dir / 'assets' / 'menu' / 'fg' / 'regular').rglob('*')]
 # hw
-menu_graph['fg']['fgs_hw'] = [str(fg.name) for fg in (this_dir / 'assets' / 'menu' / 'fg' / 'hw').rglob('*')]
+menu_graph['fg']['fgs_hw'] = [str(fg.relative_to(this_dir).as_posix()) for fg in (this_dir / 'assets' / 'menu' / 'fg' / 'hw').rglob('*')]
 # xmas
-menu_graph['fg']['fgs_xmas'] = [str(fg.name) for fg in (this_dir / 'assets' / 'menu' / 'fg' / 'xmas').rglob('*')]
+menu_graph['fg']['fgs_xmas'] = [str(fg.relative_to(this_dir).as_posix()) for fg in (this_dir / 'assets' / 'menu' / 'fg' / 'xmas').rglob('*')]
 
 
 with open(str(this_dir / 'sys' / 'menu_graph.json'), 'w') as defmenu:

@@ -354,8 +354,8 @@ function await_video(vidu)
 
 async function spawn_menu()
 {
-	const menufg = 'assets/menu/fg/regular/' + rnd_e(window.menu_graph['fg']['fgs_regular']);
-	const menubg = 'assets/menu/bg/regular/' + rnd_e(window.menu_graph['bg']['bgs_regular']);
+	const menufg = rnd_e(window.menu_graph['fg']['fgs_regular']);
+	const menubg = rnd_e(window.menu_graph['bg']['bgs_regular']);
 	const panimg = 'assets/pan.png';
 	const vidurl = 'assets/v4.webm';
 
