@@ -319,7 +319,7 @@ async function await_image_cache(imgu, toblob=false)
 
 		    if (img.complete) {
 		        resolve(true);
-		        console.log('preloaded alr');
+		        console.log('preloaded alr', imgu);
 		    } else {
 		        img.onload = () => {
 		        	console.log('precached ' + imgu);
@@ -380,13 +380,29 @@ async function spawn_menu()
 	vids[0].src = vidurl;
 	vids[1].src = vidurl;
 
+	/*
 	for (let ayylmfao of window.menu_graph['fg']['fgs_regular']){
 		await_image_cache('assets/menu/fg/regular/' + ayylmfao)
 	}
+	for (let ayylmfao of window.menu_graph['fg']['fgs_hw']){
+		await_image_cache('assets/menu/fg/hw/' + ayylmfao)
+	}
+	for (let ayylmfao of window.menu_graph['fg']['fgs_xmas']){
+		await_image_cache('assets/menu/fg/xmas/' + ayylmfao)
+	}
+
+
 
 	for (let ayylmfao of window.menu_graph['bg']['bgs_regular']){
 		await_image_cache('assets/menu/bg/regular/' + ayylmfao)
 	}
+	for (let ayylmfao of window.menu_graph['bg']['bgs_xmas']){
+		await_image_cache('assets/menu/bg/xmas/' + ayylmfao)
+	}
+	for (let ayylmfao of window.menu_graph['bg']['bgs_hw']){
+		await_image_cache('assets/menu/bg/hw/' + ayylmfao)
+	}
+	*/
 }
 
 
