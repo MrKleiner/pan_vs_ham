@@ -360,8 +360,6 @@ async function spawn_menu()
 	const vidurl = 'assets/v4.webm';
 
 	await await_image_cache(menubg)
-	await await_image_cache(menubg)
-	await await_image_cache(menufg)
 	await await_image_cache(menufg)
 	document.body.style.backgroundImage = 'url("' + menufg + '"), url("' + menubg + '")';
 
@@ -381,6 +379,14 @@ async function spawn_menu()
 	const vids = document.querySelectorAll('#menu_title video');
 	vids[0].src = vidurl;
 	vids[1].src = vidurl;
+
+	for (let ayylmfao of window.menu_graph['fg']['fgs_regular']){
+		await_image_cache('assets/menu/fg/regular/' + ayylmfao)
+	}
+
+	for (let ayylmfao of window.menu_graph['bg']['bgs_regular']){
+		await_image_cache('assets/menu/bg/regular/' + ayylmfao)
+	}
 }
 
 
