@@ -579,7 +579,10 @@ function init_codex()
 
 
 
-
+function loadout_maker_activator()
+{
+	
+}
 
 
 
