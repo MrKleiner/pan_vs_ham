@@ -108,7 +108,7 @@ body
 #menu_title
 {
 	display: flex;
-	height: 250px;
+	height: 25vh;
 	position: relative;
 
 }
@@ -154,7 +154,7 @@ body
 
 #rside_poster
 {
-	margin-top: 250px;
+	margin-top: 25vh;
 	height: 25vw;
 	/*width: 100%;*/
 	object-position: center;
